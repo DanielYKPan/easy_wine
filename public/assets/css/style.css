@@ -1,0 +1,1073 @@
+body {
+	width: 100%;
+}
+
+h1, .h1 {
+	font-size: 5em !important;
+}
+
+h2, .h2 {
+	font-size: 4em !important;
+}
+
+h3, .h3 {
+	font-size: 3em !important;
+}
+
+h4, .h4 {
+	font-size: 2em !important;
+}
+
+h5, .h5 {
+	font-size: 1.5em !important;
+}
+
+h6, .h6 {
+	font-size: 1em !important;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+.field-validation-error {
+	color: #a94442;
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 767px) { body {font-size:0.9rem;} } 
+@media (min-width: 768px) { body {font-size:1rem;} } 
+@media (min-width: 992px) { body {font-size:1.2rem;} } 
+@media (min-width: 1200px) { body {font-size:1.5rem;} }
+
+/***************************
+#
+#    Button Styling Part
+#
+//***************************/
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:100%;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:120%;
+    line-height: 1.2;
+  }
+}
+
+/*********************************************/
+
+/***************************
+#
+#    Header Styling Part
+#
+//***************************/
+
+	.login-links:before {
+		background: #000;
+		display: block;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2.6em;
+		left: 0;
+		right: 0;
+	}
+
+	.login-links a {
+		color: #fff;
+		display: inline-block;
+	}
+
+	.login-links a.signin {
+		color: #88d0cc;
+		font-weight: 800;
+		padding: 10px;
+		width: auto;
+		position: relative;
+		overflow: visible;
+	}
+
+	.login-links a.signin:hover{
+		text-decoration: none;
+		color: #5F928F;
+	}
+
+	.login-links>a.account-name{
+		position: relative;
+		margin-right: 1em;
+	}
+
+
+	#mast-head > .inner-center {
+	    height: 7.2em;
+	    padding-top: 0;
+	}
+
+	.logo {
+		background:url('../imgs/theme/CellarmasterLogo.png');
+		background-position: left top;
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 22em;
+		height: 4em;
+		float: left;
+		margin-top: 2.2em;
+		margin-bottom: 0.7em;
+	}
+
+/***************************
+#
+#    Banner Styling Part
+#
+//***************************/
+
+	#banner {
+		display: block;
+		position: absolute;
+		width: 100%;
+		background-position: center center;
+		left: 0;
+		padding: 0;
+		margin: 0;
+	}
+
+	.banner-intro {
+		margin: 0 auto;
+		position: relative;
+		height: 23.5em;
+	}
+
+	.banner-intro .highlight {
+		font-family: Mercury;
+	}
+
+	.search #banner .banner-content-area, .account #banner .banner-content-area, .home #banner .banner-content-area {
+		margin: 0 auto;
+		padding: 0;
+		height: 100%;
+	}
+
+	.banner-heading {
+		font-size: 2.625em;
+		line-height: 1.5em;
+		font-weight: 400;
+	}
+
+	.home #banner, .account #banner {
+		background-color: #eee;
+		background: url('../imgs/theme/BannerSlice.jpg');
+		width: 100%;
+		height: 23.5em;
+	}
+
+	#carousel-slide-show {
+	    position: relative;
+	    overflow: hidden;
+	    z-index: 0;
+	    margin: 0  !important;
+	}
+
+	.slider-thumbs {
+		margin-top: 1.3em;
+		position: absolute;	
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	.slider-thumbs ul{
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	.slider-thumbs li {
+		margin-bottom: 1em;
+		width: 70%;
+	}
+
+	.slider-thumbs .selected img {
+		opacity:0.5;
+	}
+	
+	/* hidden thumbnails in mobil size */
+	@media (max-width: 767px) {
+		.slider-thumbs {
+			display: none;
+		}
+	}
+
+
+/************************** Banner Styling End *************************/
+
+/***************************
+#
+#    Promotion Panel Styling Part
+#
+//***************************/
+
+	.promo-tile-panel {
+		text-align: center;
+		white-space: nowrap;
+		height: auto;
+		padding: 1em 0;
+		border-bottom: 2px solid #8f969b;
+		margin-top: 1em;
+	}
+
+	.promo-tile-panel .promo-tile {
+		display: block;
+		color: #383838;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	.promo-tile-panel .promo-tile>img {
+		width: 100%;
+	}
+
+	.promo-tile-panel .promo-tile>h4 {
+		display: block;
+		font-weight: 500;
+		white-space: normal;
+	}
+
+	.promo-tile-panel .promo-tile>p {
+		white-space: normal;
+	}
+
+/************************** Promotion Panel Styling End *************************/
+
+/***************************
+#
+#     Decision Panel Styling Part
+#
+//***************************/
+
+	#decision-panel {
+		text-align: center;
+		height: 9em;
+		clear: both;
+		line-height: 3em;
+		padding-top: 1em;
+		margin: 0 4em;
+	}
+
+	#decision-panel:before {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		content: "";
+		z-index: -1;
+		height: 9em;
+		background-color: #E7F6F5;
+	}
+
+	#decision-panel h3 {
+		color: #4a4f53;
+		text-align: center;
+		font-size: 2em;
+		font-weight: bold;
+		margin-right: 2em;
+	}
+
+/************************** Decision Panel Styling End *************************/
+
+/***************************
+#
+#     Navbar Styling Part
+#
+//***************************/
+
+
+	.home-navbar {
+		margin-bottom: 1em;
+		border: none;
+		min-height: 2em;
+	}
+
+	.home-navbar .home-navbar-nav > li > a {
+		font-weight: 700;
+		color: #000;
+		font-size: 1.2em;
+		text-transform: capitalize;
+	}
+
+	.home-navbar .home-navbar-nav > li > a:hover {
+		color: #89B3FD;
+	}
+
+	.home-navbar-nav > li {
+		margin-left: 1em;
+		padding-bottom: 0;
+	}
+
+	.dropdown-menu > li > ul {
+	    padding: 0;
+	    margin: 0;
+	}
+	.dropdown-menu > li > ul > li {
+	    list-style: none;
+	}
+	.dropdown-menu > li > ul > li > a {
+	    display: block;
+	    padding: 3px 20px;
+	    clear: both;
+	    font-weight: normal;
+	    line-height: 1.428571429;
+	    color: #999;
+	    white-space: normal;
+	}
+	.dropdown-menu > li ul > li > a:hover, .dropdown-menu > li ul > li > a:focus {
+	    color: #444;
+	    background-color: #f5f5f5;
+	}
+	
+	.dropdown-menu .dropdown-header {
+	    color: #428bca;
+	    font-size: 1.2em;
+	    font-weight:bold;
+	}
+	.dropdown-menu form {
+	    margin:3px 20px;
+	}
+
+	.dropdown-menu .form-group {
+	    margin-bottom: 3px;
+	}
+
+	.deal-of-the-day .header {
+		color: #FF1717;
+		font-size: 1.3em;
+		font-weight: 600;
+	}
+
+	.deal-of-the-day .wine-label {
+		margin: 1em 0;
+		color: black;
+		font-size: 1.3em;
+	}
+
+	.deal-of-the-day .wine-was-price {
+		font-size: 1.2em;
+		color: #999;
+	}
+
+	.deal-of-the-day .wine-now-price {
+		font-size: 1.4em;
+		color: #000;
+		font-weight: 700;
+	}
+
+	.deal-of-the-day .wine-save-amount {
+		font-size: 1.4em;
+		color: #FF1717;
+		font-weight: 700;
+	}
+
+/************************** Navbar Styling End *************************/
+
+/***************************
+#
+#     Login Form Styling Part
+#
+//***************************/
+	.login-form-header {
+		font-size: 2.5em;
+		font-weight: 700;
+	}
+
+	#wrapper.account .login .panel {
+		height: 23em;
+		padding: 1em;
+		position: relative;
+	}
+
+	#wrapper.account .login .existing-customers-box .existing-skin {
+		background-color: #d0ecee;	
+	}
+
+	#wrapper.account .login .new-customers-box .new-skin {
+		background-color: #dddfe1;
+	}
+
+	.password-remind-link {
+		vertical-align: bottom;
+	}
+/************************** Login Form Styling End *************************/
+
+/***************************
+#
+#     Footer Styling Part
+#
+//***************************/
+	.footer {
+		padding: 20px 0;
+		color: #fff;
+	}
+
+	.footer .inner-center {
+		width: 960px;
+		margin: 0 auto;
+	}
+
+	.footer.top {
+		background: #818285;
+		padding: 20px 0 10px;
+		margin-top: 10px;
+	}
+
+	.footer.mid {
+	    background: none repeat scroll 0% 0% #585859;
+	}
+
+	.footer.bottom {
+		background-color: #000;
+	}
+
+	@media (max-width: 767px) {
+		.footer.bottom {
+			display: none;
+		}
+
+		.footer.mid {
+			display: none;
+		}
+	}
+
+	.footer .section {
+		width: 145px;
+		padding-right: 10px;
+		display: inline-block;
+		zoom: 1;
+		vertical-align: top;
+		text-align: left;
+	}
+
+	.footer .section strong {
+		font-size: 15px;
+		font-weight: 500;
+		margin-bottom: 3px;
+	}
+
+	.footer h2 {
+		font-family: Mercury;
+		color: #88d0cc;
+		font-size: 24px;
+		font-style: italic;
+		margin-top: 0px;
+	}
+
+	.footer h3 {
+	    font-size: 16px;
+	    font-weight: 500;
+	    padding: 0px;
+	    color: #FFF;
+	    margin-top: 0px;
+	    margin-bottom: 5px;
+	}
+
+	.footer ul {
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.footer .section .footer-link {
+		color: #FFF;
+		font-size: 11px;
+		line-height: 1.3em;
+		float: none;
+	}
+
+	.footer .section .footer-link:hover {
+		text-decoration: none;
+		color: #63c1c6;
+	}
+
+	.footer .section.news {
+		margin-left: 20px;
+		width: 420px;
+	}
+
+	.footer .section.news .input-group {
+		margin-top: 5px;
+	}
+
+	.footer.bottom .section {
+		padding-bottom: 1em;
+	}
+
+	.footer p {
+		font-size: 11px;
+		text-align: center;
+		display: block;
+		clear: left;
+	}
+
+	.footer h4, .footer h6 {
+		margin-bottom: 0;
+	}
+
+/************************** Footer Styling End *************************/
+
+
+/***************************
+#
+#     Password Recovery Styling Part
+#
+//***************************/
+
+	#wrapper.account .send-password-reminder,#wrapper.account .reset-password {
+		vertical-align: top;
+		background-color: #d0ecee;
+		border-radius: 5px;
+		padding: 1em 2em;
+	}
+
+	#wrapper.account .password-reset-header {
+		font-size: 2.5em;
+		padding-bottom: 0.5em;
+	}
+
+/************************** Password Recovery Styling End *************************/
+
+/***************************
+#
+#    account Styling Part
+#
+//***************************/
+	.account .register-heading {
+		font-size: 4em;
+		font-weight: 600;
+		color: #bcbdc0;
+	}
+
+	@media (max-width: 767px) {
+		.account .section{
+			display: none;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.account .mobile-section{
+			display: none;
+		}
+	}
+
+	.mobile-section-navbar {
+		border: none;
+	}
+
+	.mobile-section-navbar .accountControlBtn {
+		width: 100%;
+	}
+
+	.account .section {
+		position: relative;
+		margin: 1em 0;
+		padding-bottom: 1.2em;
+	}
+
+	.account .section.thumb {
+		text-align: center;
+		border-bottom: 3px solid #b5b5b5;
+	}
+
+	.account .section.thumb a {
+		display: inline-block!important;
+		position: relative;
+		margin: 0 1em 1em;
+	}
+
+	.account .section .icon {
+		background: #88d0cc center center no-repeat;
+		border-radius: 50%;
+		display: block;
+		padding: .75em;
+		width: 6.5em;
+		height: 6.5em;
+		text-decoration: none;
+		text-align: center;
+		color: #61c1c5;
+	}
+
+	.account .section .icon:hover{
+		background-color:#48a8ac;
+	}
+
+	.account .section .icon:after {
+		box-shadow: 0 1em 1em rgba(99,99,99,.75);
+		content: "";
+		width: 5em;
+		height: .3em;
+		position: absolute;
+		bottom: 1em;
+		font-size: 1em;
+		z-index: -1;
+		left: .75em;
+	}
+
+	.account .section .orders {
+		background:url('../imgs/theme/account-sprite.png') transparent no-repeat \9;
+		background-position-x: -540px \9;
+		background-image:url('../imgs/theme/account-sprite-orders.svg');
+	}
+
+	.account .section .details {
+		background:url('../imgs/theme/account-sprite.png') transparent no-repeat \9;
+		background-position-x: -814px \9;
+		background-image:url('../imgs/theme/account-sprite-details.svg');
+	}
+
+	.account .section .passwords {
+		background:url('../imgs/theme/account-sprite.png') transparent no-repeat \9;
+		background-position-x: -674px \9;
+		background-image:url('../imgs/theme/account-sprite-passwords.svg');
+	}
+
+	.account .section .plans {
+		background:url('../imgs/theme/account-sprite.png') transparent no-repeat \9;
+		background-position-x: -1086px \9;
+		background-image:url('../imgs/theme/account-sprite-plans.svg');
+	}
+
+	.account .section .vips {
+		background:url('../imgs/theme/account-sprite.png') transparent no-repeat \9;
+		background-position-x: -949px \9;
+		background-image:url('../imgs/theme/account-sprite-vips.svg');
+	}
+
+	.account .section .icon span {
+		position: relative;
+		top: 4.5em;
+		font-size: 1.5em;
+		white-space: nowrap;
+		text-transform: capitalize;
+	}
+
+	.account h1.section-heading {
+		padding-bottom: 10px;
+	}
+
+	.section-heading {
+		font-family: Mercury;
+		font-weight: bold;
+		line-height: 100%;
+		color: #bcbdc0;
+		font-style: italic;
+		margin-top: 0.3em;
+		text-transform: capitalize;
+	}
+
+	.account-section .account-form{
+		background-color: #f5f5f5;
+		padding: 2em;
+		border-bottom: 1px solid #8f969b;
+	}
+
+	.account .carousel-label-box {
+		margin: 2em 5em 0.2em;
+		font-weight: 400;
+		font-size: 1.5em;
+		font-family: Metric;
+	}
+
+	.carousel-label-box {
+		background-color: #e4e5e9;
+		text-align: center;
+		padding: .3em 2.5em .1em;
+		position: relative;
+		margin: auto;
+		font-weight: 900;
+		z-index: 1;
+		font-family: Mercury;
+	}
+
+	.account .readOnly {
+		background-color: #88d0cc;
+		margin-bottom: 1em;
+		border-bottom: 1px solid black;
+		padding: 1em 2.5em;
+	}
+/************************** Account Styling End *************************/
+
+
+
+/***************************
+#
+#    Register Styling Part
+#
+//***************************/
+
+	#register_form {
+		position: relative;
+		margin-bottom: 1em;
+	}
+
+	#register_form .panel {
+		border: 0;
+	}
+
+	#register_form .register-form-section-heading {
+		font-size: 2em;
+		font-weight: 500;
+		background: #fff;
+		color: #000;
+		position: relative;
+		padding: .5em 0;
+		border-top: 1px solid #8f969b;
+	}
+
+	#register_form a.number {
+		color: #fff;
+		display: inline-block;
+		background: #88d0cc;
+		width: 1.2em;
+		height: 1.2em;
+		border-radius: 50%;
+		text-align: center;
+		padding: .1em;
+		line-height: 1em;
+		margin-right: .25em;
+		text-decoration: none;
+		pointer-events:none;
+		cursor: default;
+	}
+
+	#register_form .preferencesRadioBtn {
+		margin-top: 1em;
+	}
+
+/************************** Register Styling End *************************/
+
+/***************************
+#
+#    Specific-Wine Page Styling Part
+#
+//***************************/
+
+	.product-basic-inform .product-image {
+		position: relative;
+		margin-left: 7em;
+		width: 30%;
+		height: auto;
+		z-index: -1;
+	}
+
+	.product-basic-inform .bottle-price {
+		position: absolute;
+		left: 3em;
+		background-color: #fff533;
+		display: block;
+		border-radius: 50%;
+		height: 7em;
+		width: 7em;
+		padding: .65em;
+		text-align: center;
+		white-space: nowrap;
+		font-size: 1.2em;
+		margin-top: 1em;
+		line-height: 1.3em;
+	}
+
+	.product-basic-inform .bottle-price .bottle-price-was {
+		display: block;
+		font-weight: 900;
+		padding-top: .5em;
+	}
+
+	.product-basic-inform .bottle-price .bottle-price-now {
+		display: block;
+		font-size: 1.8em;
+		letter-spacing: -1px;
+		font-weight: 900;
+	}
+
+	.product-usp {
+		width: 12em;
+		line-height: 1.6em;
+		vertical-align: top;
+		position: absolute;
+		left: 14em;
+		margin: 0;
+		padding-top: 1em;
+		background-color: black;
+		color: #fff;
+		padding: .5em .5em .5em 0;
+		font-size: 1.3em;
+		box-shadow: -4px 4px 12px 2px rgba(120,116,120,1); 
+	}
+
+	.product-usp:before {
+		width: 0;
+		height: 0;
+		border-top: 0.6em solid transparent;
+		border-right: 0.6em solid black;
+		border-bottom: 0.6em solid transparent;
+		position: absolute;
+		top: 20px;
+		left: -0.6em;
+		content: "";
+	}
+
+	h4.product-title {
+		line-height: 1.1em;
+		font-weight: 900;
+		color: #000;
+		font-family: Georgia, Times, "Times New Roman", serif;
+	}
+
+	span.product-package-size {
+		font-size: .5em;
+		font-weight: 400;
+		height: 2.5em;
+		width: 2.5em;
+		border-radius: 50%;
+		display: inline-block;
+		background-color: #9AA0A5;
+		color: #FFF;
+		text-align: center;
+		vertical-align: middle;
+		margin-left: 0.5em;
+	}
+
+	.price-now {
+		font-weight: 700;
+		margin-bottom: 0;
+		color: #000;
+	}
+
+	.save-amount {
+		color: #FF1919;
+		margin-top: 0;
+		font-weight: 700;
+	}
+
+	.add-to-cart {
+		margin-bottom: 1.5em;
+	}
+
+	div.add-to-cart select {
+		width: 5em;
+		height: 2em;
+		margin-right: 1em;
+		display: inline-block;
+		text-align: center;
+		vertical-align: top;
+		line-height: 2em;
+	}
+
+	.product-detail-inform .product-description {
+		margin: 0.5em 0;
+		border-top: 1px solid #9AA0A5;
+		border-bottom: 1px solid #9AA0A5;
+		padding: 0.5em 0.1em;
+		font-size: 1.2em;
+	}
+
+	.accordion {
+		border-bottom: 1px solid #9AA0A5;
+	}
+
+	.accordion-header {
+		padding: 0 1em;
+	}
+
+	.taste-note .taste-note-items div {
+		padding: 0.2em 1em;
+	}
+
+	.taste-note .taste-note-items div:nth-child(odd) {
+		background-color: #EAEBEC;
+	}
+
+	.taste-note .taste-note-items h6{
+		display: inline-block;
+		font-weight: 700;
+		width: 30%;
+		vertical-align: top;
+	}
+
+	.taste-note .taste-note-items p {
+		display: inline-block;
+		width: 60%;
+		vertical-align: bottom;
+	}
+
+/************************** Specific-Wine Page Styling End *************************/
+
+
+/***************************
+#
+#    Search-Wine Page Styling Part
+#
+//***************************/
+
+	.search-container{
+		margin-top: 1em;
+	}
+
+	.wine .pagingContainer {
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+	}
+
+	.pagingTemplate div{
+		display: inline-block;
+	}
+
+	.pagingTemplate .pagingTemplate_qty {
+		width: auto;
+		margin-right: 1em;
+		color: #000;
+		font-weight: bold;
+	}
+
+	.pagingTemplate .pagingTemplate_qty .pagingTemplate_qtyAmount {
+		font-size: 1.8em;
+	}
+
+	.pagingTemplate .pagingTemplate_sort {
+		color: #999;
+		margin-right: 1em;
+	}
+
+	.pagingTemplate .pagingTemplate_sort div {
+		color: #000;
+		font-weight: 500;
+	}
+
+	.pagingTemplate_sortSelectBox{
+		height: 2.5em;
+		line-height: 1.2;
+		width: 10em;
+		color: #555;
+	}
+
+	.pagingTemplate_view {
+		padding-top: 0.5em;
+		vertical-align: top;
+	}
+
+	.pagingTemplate_view .pagingTemplate_viewIcon{
+		font-size: 1.5em;
+	}
+
+	.pagingTemplate_view .pagingTemplate_viewIcon .active {
+		color:#999;
+	}
+
+	.pagingTemplate .pagingTemplate_pageLinks {
+		position: absolute;
+		right: 2em;
+		top: 0;
+	}
+
+	.pagingSeparator {
+		margin-top: 0.3em;
+	}
+
+	.borderLine:after {
+		content: "";
+		display: block;
+		border-bottom: 1px solid #555;
+	}
+
+	.wineResultsContainer .wine-info-list{
+		height: auto;
+		position: relative;
+		vertical-align: top;
+		border-bottom: 1px solid #555;
+		padding: 0.8em 0;
+		margin: 0;
+	}
+
+	.wineResultsContainer .wine-info-list .wine-info-list-pic{
+		text-align: center;
+		height: 15em;
+		position: relative;
+	}
+
+	.wineResultsContainer .wine-info-list .resultTemplate_img {
+		max-height: 15em;
+	}
+
+	.wineResultsContainer .wine-info-list .resultTemplate_label {
+		font-size: 1.2em;
+		font-weight: bold;
+		color: #000;
+		display: block;
+		line-height: 1.3em;
+	}
+
+	.wineResultsContainer .wine-info-list .resultTemplate_usp {
+		padding-left: 1.2em;
+		font-size: 1em;
+	}
+
+	.wineResultsContainer .wine-info-list .resultTemplate_price span {
+		display: block;
+		line-height: 1.3em;
+	}
+
+	.priceLeft, .priceRight {
+		padding: 0 0 0 1em;
+		vertical-align: bottom;
+	}
+
+	.add-to-cart .package-size {
+		margin-top: 0;		
+	}
+
+	.wineResultsContainer .wine-info-list .price-was {
+		font-size: 1.3em;
+	}
+
+	.wineResultsContainer .wine-info-list .price-now {
+		font-size: 1.5em;
+	}
+
+	.wineResultsContainer .wine-info-list .price-save {
+		font-size: 1.4em;
+		color: #FF1919;
+		font-weight: bold;
+	}
+	.wineResultsContainer .wine-info-list .price-bottle {
+		font-size: 1.5em;
+	}
+
+	.wineResultsContainer .wine-info-list .add-to-cart {
+		margin-top: 1em;
+	}
+
+	.wineResultsContainer .amount-select-box {
+		width: 3em;
+	}
+
+	div.add-to-cart span{
+		display: inline-block !important;
+	}
+
+	#ajax-loading {
+		position:fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -4em;
+		margin-left: -4em;
+	}
+
+/************************** Search-Wine Page Styling End *************************/
