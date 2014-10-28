@@ -1,0 +1,17 @@
+actor: Tester
+paths:
+    tests: app/tests/codecept
+    log: app/tests/codecept/_output
+    data: app/tests/codecept/_data
+    helpers: app/tests/codecept/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: false
+    memory_limit: 1024M
+modules:
+    config:
+        Db:
+            dsn: 'mysql:host=localhost;dbname=easy_wine_testing'
+            user: 'homestead'
+            password: 'secret'
+            dump: app/tests/codecept/_data/dump.sql
