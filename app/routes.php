@@ -2,6 +2,30 @@
 
 /*
 |--------------------------------------------------------------------------
+| Test Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('test/full_name', function(){
+	dd(User::find(1)->full_name);
+});
+
+Route::get('test/add_user_fail', function(){
+	$user = new User;
+	$user->user_role = "administrator";
+	$user->password = "password";
+
+	dd($user->save());
+});
+
+Route::post('test/show', array('as'=>'test_show_post', function(){
+	echo "test post display";
+}));
+
+
+/*
+|--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
 |
@@ -11,7 +35,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('as'=>'home', 'uses'=>'HomeController@index'));
+
+Route::controller('user', 'UsersController');
