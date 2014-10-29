@@ -1,6 +1,7 @@
 <?php namespace Easywine\Service\Validation;
 
 use Illuminate\Validation\Factory as Validator;
+use Easywine\Exception\FormValidationException;
 
 abstract class AbstractLaravelValidator implements ValidatorInterface {
 
@@ -12,18 +13,19 @@ abstract class AbstractLaravelValidator implements ValidatorInterface {
 	protected $validator;
 
 	/**
+	 * A link that would be redirect to
+	 * when validation fails
+	 *
+	 * @return string
+	 */
+	protected $returnLink;
+
+	/**
 	 * Validation data key=>value array
 	 *
 	 * @var Array
 	 */
 	protected $input = array();
-
-	/**
-	 *  Validation errors
-	 *
-	 * @var Array
-	 */
-	protected $errors = array();
 
 	/**
 	 *  Validation rules
@@ -46,21 +48,23 @@ abstract class AbstractLaravelValidator implements ValidatorInterface {
 
 	/**
 	 *  Set data to validate
+	 *	And set the redirect back link
 	 *
 	 * @return \Easywine\Service\Validation\AbstractLaravelValidation
 	 */
-	public function with(array $input)
+	public function with(array $input, $returnLink)
 	{
 		$this->input = $input;
+		$this->returnLink = $returnLink;
 		return $this;
 	}
 
 	/**
 	 *  Validate passes or fails
 	 *
-	 * @return Boolean
+	 * @return void
 	 */
-	public function passes()
+	public function validates()
 	{
 		$validator = $this->validator->make(
 			$this->input,
@@ -68,13 +72,9 @@ abstract class AbstractLaravelValidator implements ValidatorInterface {
 			$this->getMessages()
 		);
 
+		// if the validation fails, throw a 'FormValidationException'
 		if($validator->fails())
-		{
-			$this->errors = $validator->messages();
-			return false;
-		}
-
-		return true;
+			throw new FormValidationException($validator, $this->returnLink);
 	}
 
 	/**
@@ -95,15 +95,5 @@ abstract class AbstractLaravelValidator implements ValidatorInterface {
 	public function getMessages()
 	{
 		return $this->messages;
-	}
-
-	/**
-	 *  Return errors, if any
-	 *
-	 * @return Array
-	 */
-	public function getErrors()
-	{
-		return $this->errors;
 	}
 }

@@ -121,27 +121,16 @@ class UsersController extends \BaseController {
 			'password' => Input::get('password')
 		);
 
-		// Validate user login form input
-		/*if($this->login_validator->with($login_inform)->passes())
-		{
-			// check user login information and attempt to login user
-			if($this->user->loginUser($login_inform))
-			{
-				return Redirect::intended('user/dashboard');
-			}else{
-				return Redirect::action('UsersController@getLogin')->with('message','The email or the password you entered is incorrent.')->withInput();
-			}
-		} else {
-			return Redirect::action('UsersController@getLogin')->withInput($login_inform)->withErrors($this->login_validator->getErrors());
-		}*/
-		if($this->user_login_form->login($login_inform))
+		$returnLink = "user/login";
+
+		// user login form processes
+		if($this->user_login_form->login($login_inform, $returnLink))
 		{
 			return Redirect::intended('user/dashboard');
 		} else {
 			return Redirect::action('UsersController@getLogin')
 							->withInput($login_inform)
-							->with('message', 'The email or the password you entered is incorrent.')
-							->withErrors($this->user_login_form->getErrors());
+							->with('message', 'The email or the password you entered is incorrent.');
 		}
 	}
 

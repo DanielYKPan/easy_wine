@@ -1,5 +1,7 @@
 <?php
 
+use Easywine\Exception\FormValidationException;
+
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
@@ -49,6 +51,15 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+});
+
+//catch the FormValidationException and return an API json.
+App::error(function(FormValidationException $exception)
+{
+	$returnLink = $exception->getReturnLink();
+	$validator = $exception->getValidator();
+
+	return Redirect::to($returnLink)->withErrors($validator)->withInput($validator->getData());
 });
 
 /*

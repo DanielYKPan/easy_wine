@@ -8,14 +8,14 @@ interface ValidatorInterface {
      * @param array
      * @return \Easywine\Service\Validation\ValidatorInterface  $this
      */
-    public function with(array $input);
+    public function with(array $input, $returnLink);
 
     /**
      * Test if validation passes
      *
-     * @return boolean
+     * @return void
      */
-    public function passes();
+    public function validates();
 
     /**
      *  Retrieve validation rules
@@ -30,12 +30,4 @@ interface ValidatorInterface {
      * @return array
      */
     public function getMessages();
-
-    /**
-     * Retrieve validation errors
-     *
-     * @return array
-     */
-    public function getErrors();
-	
 }

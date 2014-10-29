@@ -6,13 +6,6 @@ use Easywine\Repo\User\UserRepositoryInterface;
 class UserLoginForm {
 
 	/**
-	 *  Form Data
-	 *
-	 *	@var array
-	 */
-	protected $data;
-
-	/**
 	 *  validator
 	 *
 	 *	@var \Easywine\Service\Form\Contracts\ValidatorInterface
@@ -33,23 +26,9 @@ class UserLoginForm {
 		$this->user = $user;
 	}
 
-	public function login(array $input)
+	public function login(array $input, $returnLink)
 	{
-		if( ! $this->valid($input) )
-		{
-			return false;
-		}
-
+		$this->validator->with($input, $returnLink)->validates();
 		return $this->user->loginUser($input);
-	}
-
-	public function getErrors()
-	{
-		return $this->validator->getErrors();
-	}
-
-	protected function valid(array $input)
-	{
-		return $this->validator->with($input)->passes();
 	}
 }
