@@ -75,6 +75,15 @@ a:hover, a:focus {
 #    Header Styling Part
 #
 //***************************/
+	.login-links .welcome-msg {
+		color: #88d0cc;
+		font-weight: 800;
+		padding: 10px;
+		width: auto;
+		position: relative;
+		overflow: visible;
+		display: inline;
+	}
 
 	.login-links:before {
 		background: #000;
@@ -554,6 +563,8 @@ a:hover, a:focus {
 		font-size: 4em;
 		font-weight: 600;
 		color: #bcbdc0;
+		font-style: italic;
+		text-transform: capitalize;
 	}
 
 	@media (max-width: 767px) {

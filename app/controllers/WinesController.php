@@ -1,6 +1,15 @@
 <?php
 
+use Easywine\Repo\Wine\WineRepositoryInterface as Wine;
+
 class WinesController extends \BaseController {
+
+	protected $wine;
+
+	public function __construct(Wine $wine)
+	{
+		$this->wine = $wine;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -9,17 +18,6 @@ class WinesController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /wines/create
-	 *
-	 * @return Response
-	 */
-	public function create()
 	{
 		//
 	}
@@ -37,50 +35,37 @@ class WinesController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /wines/{id}
+	 * GET /wines/{product_code}
 	 *
-	 * @param  int  $id
+	 * @param  string  $product_code
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($product_code)
 	{
-		//
+		$wine = $this->wine->byProductCode($product_code);
+		return View::make('wines.show')->with('wine', $wine);
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 * GET /wines/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
+	 * Searching for wines by wine type
+     * Paginated wines
+     * GET /wines/wine_type/{$wine_type}
+     */
+	public function byWineType($wine_type)
 	{
-		//
-	}
+		$pagi_rule['page'] = Input::get('page', 1);
+		$pagi_rule['per_page'] = 5;
+		$pagi_rule['sort_name'] = Input::get('sort_name', 'wines.created_at');
+		$pagi_rule['sort_order'] = Input::get('sort_order', 'desc');
+		$pagiData = $this->wine->byWineType($wine_type, $pagi_rule);
+		$wines = Paginator::make($pagiData->items, $pagiData->totalItems, $pagi_rule['per_page']);
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /wines/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+		if(Request::ajax())
+		{
+			$html = View::make('wines.search_result')->with('wines', $wines)->render();
+			return Response::json(array('html' => $html));
+		}
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /wines/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		return View::make('wines.index')->with('wines', $wines);
 	}
-
 }

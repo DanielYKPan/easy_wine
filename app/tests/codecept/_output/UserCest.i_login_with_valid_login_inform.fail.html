@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="easyWineApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Easy Wine Office Website">
+	<meta name="csrf-token" data-ng-init="csrf_token = 'AX6SWJqmGjCeV5tNFPkf9GBHSrsm43cszD4Rluci'">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link media="all" type="text/css" rel="stylesheet" href="http://localhost/packages/twitterbootstrap/css/bootstrap.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://localhost/packages/twitterbootstrap/css/bootstrap-theme.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://localhost/assets/css/style.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://localhost/assets/css/yamm.css">
+
+		<title>Easy Wine</title>
+</head>
+<body>
+	<div class="mast-head">
+    	<div class="login-links container">
+	<div class="login-links-content pull-right">
+        <h4>Welcome to Easy Wine</h4>
+	</div>
+</div>
+
+<div class="inner-center container">
+	<a href="http://localhost" class="logo img-responsive" title="Easy Wine - Buy Wine Online"></a>
+</div>
+
+<nav class="navbar navbar-default yamm home-navbar" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="js-navbar-collapse">
+      <ul class="nav navbar-nav home-navbar-nav">
+        <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">reds</a>
+            <ul class="dropdown-menu row" role="menu">
+                <li class="col-sm-3 deal-of-the-day">
+                    <ul>
+                        <li class="header text-uppercase">deal of the day</li>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="#">
+                                                <img src="http://localhost/uploads/images/wines/260/C988X.png" class="img-deal-of-the-day img-responsive" alt="a picture">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="wine-label text-capitalize">
+                                                Wine Name Displayed Here
+                                            </div>
+                                            <div class="wine-was-price">
+                                                Was $10.00              
+                                            </div>
+                                            <div class="wine-now-price">
+                                                Now $8.00
+                                            </div>
+                                            <div class="wine-save-amount">
+                                                Save $2.00
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <button href="#" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+                                </div>
+                                <!-- End Item -->
+                            </div>
+                            <!-- End Carousel Inner -->
+                        </div>
+                        <!-- /.carousel -->
+                        <li class="divider"></li>
+                        <li><a href="#">View all Red Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-sm-3">
+                    <ul>
+                        <li class="dropdown-header">Red</li>
+                        <li><a href="#">All Red</a>
+                        </li>
+                        <li><a href="#">Awards</a>
+                        </li>
+                        <li><a href="#">Auto Carousel</a>
+                        </li>
+                        <li><a href="#">Imported</a>
+                        </li>
+                        <li><a href="#">Mixed Cases</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Variety</li>
+                        <li><a href="#">Variety 1</a>
+                        </li>
+                        <li><a href="#">Variety 1</a>
+                        </li>
+                        <li><a href="#">Variety 1</a>
+                        </li>
+                        <li><a href="#">Variety 1</a>
+                        </li>
+                        <li><a href="#">Variety 1</a>
+                        </li>
+                        <li><a href="#">Variety 1</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-sm-3">
+                    <ul>
+                        <li class="dropdown-header">Country</li>
+                        <li><a href="#">Country 1</a>
+                        </li>
+                        <li><a href="#">Country 1</a>
+                        </li>
+                        <li><a href="#">Country 1</a>
+                        </li>
+                        <li><a href="#">Country 1</a>
+                        </li>
+                        <li><a href="#">Country 1</a>
+                        </li>
+                        <li><a href="#">Country 1</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Region</li>
+                        <li><a href="#">Region 1</a>
+                        </li>
+                        <li><a href="#">Region 1</a>
+                        </li>
+                        <li><a href="#">Region 1</a>
+                        </li>
+                        <li><a href="#">Region 1</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-sm-3">
+                    <ul>
+                        <li class="dropdown-header">Price</li>
+                        <li><a href="#">Price 1</a>
+                        </li>
+                        <li><a href="#">Price 1</a>
+                        </li>
+                        <li><a href="#">Price 1</a>
+                        </li>
+                        <li><a href="#">Price 1</a>
+                        </li>
+                        <li><a href="#">Price 1</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Search</li>
+                        <form class="form" role="form">
+                            <div class="form-group">
+                                <label class="sr-only" for="search">Search</label>
+                                <input type="search" class="form-control" id="search" placeholder="Exceptional Wine, Extraordinary Prices">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">whites</a></li>
+        <li><a href="#">mixs</a></li>
+        <li><a href="#">sparklings</a></li>
+        <li><a href="#">others</a></li>
+        <li><a href="#" style="color:red">clearance</a></li>
+        <li><a href="#">winemakers</a></li>
+        <li><a href="#">more</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-navbar -->
+</nav>    </div>
+
+	<div class="container">
+			<div id="wrapper" class="account">
+		<section id="mainBody">
+			<div id="login" class="login" data-ng-controller="loginFormController">
+				<div class="row">
+					<form method="POST" action="http://localhost/user/login" accept-charset="UTF-8" id="login_form" name="loginForm" data-ng-submit="submitForm(loginForm.$valid)" novalidate="novalidate"><input name="_token" type="hidden" value="AX6SWJqmGjCeV5tNFPkf9GBHSrsm43cszD4Rluci">
+					<section class="existing-customers-box col-sm-6 col-md-6">
+						<header class="login-form-header">Existing customer?</header>
+						<div class="panel panel-default existing-skin">
+							<div class="panel-body">
+								<div class="form-group" data-ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }">
+								    <label for="email" for="login-email-input">Email:</label>
+								    <input placeholder="Enter Email Address" class="form-control" id="login-email-input" data-ng-model="email" required="required" name="email" type="email">
+								    
+								    <p data-ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Enter a valid email.</p>
+								</div>
+								<div class="form-group" data-ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+								    <label for="password" for="login-password-input">Password:</label>
+								    <input placeholder="Enter Password" class="form-control" id="login-password-input" data-ng-model="password" required="required" name="password" type="password" value="">
+								    
+								    <p data-ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Enter a valid password.</p>
+								</div>
+																<div class="form-group pull-right" id="signin-btnGroup">
+									<a href="http://localhost/password/remind" class="password-remind-link">Forgotten my password?</a>
+									<input class="btn btn-warning text-uppercase btn-sign-in" data-ng-disabled="loginForm.$invalid" type="submit" value="Sign in">
+								</div>
+							</div>
+						</div>
+					</section>
+					</form>
+					<section class="new-customers-box col-sm-6 col-md-6">
+						<header class="login-form-header">New to Easy-Wine?</header>
+						<div class="panel panel-default new-skin">
+							<div class="panel-body">
+								<p>Welcome</p><br>
+								<p>Create an account in just 60 seconds for faster shopping. There's no obligation to purchase.</p><br>
+								<p><strong>Let's get started.</strong></p>
+								</div>
+								<a href="http://localhost/user/register" class="btn btn-primary pull-right text-uppercase btn-register" role="button">start</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+	</div>
+</div>
+	<div class="footer top">
+    <div class="inner-center">
+    </div>
+</div>
+<div class="footer mid">
+    <div class="container">
+        <div class="section">
+            <h6>About</h6>
+            <ul>
+                <li><a href="http://localhost" class="footer-link text-capitalize">our story</a></li>
+                <li><a href="http://localhost" class="footer-link text-capitalize">meet the makers</a></li>
+                <li><a href="http://localhost" class="footer-link text-capitalize">delivery</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h6>Help</h6>
+            <ul>
+                <li><a href="http://localhost" class="footer-link text-capitalize">contact us</a></li>
+                <li><a href="http://localhost" class="footer-link text-capitalize">help</a></li>
+                <li><a href="http://localhost" class="footer-link text-capitalize">my account</a></li>
+                 <li><a href="http://localhost" class="footer-link text-capitalize">privary &amp; security</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h6>Services</h6>
+            <ul>
+                <li><a href="http://localhost" class="footer-link text-capitalize">catalogue</a></li>
+                <li><a href="http://localhost" class="footer-link text-capitalize">gift card</a></li>
+                <li><a href="http://localhost" class="footer-link text-capitalize">icon wine plans</a></li>
+                 <li><a href="http://localhost" class="footer-link text-capitalize">quarterly wine plans</a></li>
+            </ul>
+        </div>
+        <div class="section news">
+            <h5>Newsletter</h5>
+            Sign up for exceptional wine, extraordinary prices and more
+            <form method="POST" action="http://localhost/test/show" accept-charset="UTF-8"><input name="_token" type="hidden" value="AX6SWJqmGjCeV5tNFPkf9GBHSrsm43cszD4Rluci">
+                <div class="input-group">
+                    <input class="form-control newsletter_input" name="newsletter_input" type="text">
+                    <span class="input-group-btn">
+                        <input class="btn btn-info text-capitalize" type="submit" value="sign up">
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer bottom">
+    <div class="container">
+        <ul class="section">
+            <li><strong>Countries</strong></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">australian wine</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">chilean wine</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">french wine</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">italian wine</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">new zealand wine</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">spanish wine</a></li>
+        </ul>
+        <ul class="section">
+            <li><strong>Wine Regions</strong></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">barossa valley</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">bordeaux</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">champagne</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">coonawarra</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">hunter valley</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">margaret river</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">marlborough</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">mclaren vale</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">tasmania</a></li>
+        </ul>
+        <ul class="section">
+            <li><strong>Red Wines</strong></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">cabernet blends</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">cabernet sauvignon</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">grenache</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">merlot</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">pinot noir</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">red blends</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">ros&eacute;</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">shiraz</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">shiraz blends</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">Other Reds</a></li>
+        </ul>
+        <ul class="section">
+            <li><strong>White Wines</strong></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">chardonnay</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">mascato</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">pinot gris</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">riesling</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">sauvignon blanc</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">semillon</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">semillon sauvgnon blanc</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">verdelho</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">white blends</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">Other Whites</a></li>
+        </ul>
+        <ul class="section">
+            <li><strong>Wine Brands</strong></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">black wattle</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">dorrien estate</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">gallows</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">hawkesbridge</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">krondorf</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">mcleans farm</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">riversdale</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">rothbury estate</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">stefano di pieri</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">vasarelli</a></li>
+        </ul>
+        <ul class="section">
+            <li><strong>Meet the Makers</strong></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">badrice. nick</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">blackwell. sally</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">de pieri. stefano</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">doddridge. neil</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">duval. john</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">maiolo.charlie</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">mclean. bob</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">roberts. ian &amp; wendy</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">ryan. corey</a></li>
+            <li><a href="http://localhost" class="footer-link text-capitalize">vasarelli. pat &amp; vicki</a></li>
+        </ul>
+        <p>&copy; 2014 Easy Wines Pty Limited. All rights reserved. Liquor Licensing Act 1997. It is against the law to sell or supply alcohol to, or to obtain alcohol on behalf of, a person under the age of 18 years. This web site is operated by Easy Wines Pty Limited. ABN xxx xxx xxx xx. Licence Number: xxxxxxxx.</p>
+    </div>
+</div>	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://localhost/assets/js/main.js"></script>
+
+	<script src="http://localhost/packages/twitterbootstrap/js/bootstrap.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="http://localhost/packages/angularjs/js/app.js"></script>
+
+<script src="http://localhost/packages/angularjs/js/controllers.js"></script>
+
+<script src="http://localhost/packages/angularjs/js/directives.js"></script>
+
+</body>
+</html>

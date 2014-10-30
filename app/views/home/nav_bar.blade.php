@@ -1,6 +1,12 @@
 <div class="login-links container">
 	<div class="login-links-content pull-right">
-        <h4>{{{"Welcome to Easy Wine"}}}</h4>
+        {{HTML::linkRoute('home', "Welcome to Easy Wine" , array(), array('class'=>'signin'))}}
+        @if(Auth::check())
+          {{HTML::linkAction('UsersController@getDashboard', Auth::user()->userDetail->first_name , array(), array('class'=>'signin'))}}
+          {{HTML::linkAction('UsersController@getLogout', 'logout', array(), array('class'=>'signin text-capitalize'))}}
+        @else
+          {{HTML::linkAction('UsersController@getLogin', 'login', array(), array('class'=>'signin text-capitalize'))}}
+        @endif
 	</div>
 </div>
 

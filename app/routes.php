@@ -37,4 +37,9 @@ Route::post('test/show', array('as'=>'test_show_post', function(){
 
 Route::get('/', array('as'=>'home', 'uses'=>'HomeController@index'));
 
+Route::resource('wines', 'WinesController',
+                array('only' => array('index', 'show', 'store')));
+
+Route::get('wines/wine_type/{wine_type}', array('as'=>'show_wines_by_type', 'uses'=>'WinesController@byWineType'));
+
 Route::controller('user', 'UsersController');

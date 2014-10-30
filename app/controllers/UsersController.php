@@ -2,101 +2,24 @@
 
 use Easywine\Repo\User\UserRepositoryInterface as User;
 use Easywine\Service\Form\User\UserLoginForm;
+use Easywine\Service\Form\User\UserRegisterForm;
 
 class UsersController extends \BaseController {
 
 	protected $user;
 	protected $user_login_form;
+	protected $user_register_form;
 
 	/**
 	 * Dependency Injection
 	 */
 	public function __construct(User $user=null, 
-								UserLoginForm $user_login_form)
+								UserLoginForm $user_login_form,
+								UserRegisterForm $user_register_form)
 	{
 		$this->user = $user?: new User;
 		$this->user_login_form = $user_login_form;
-	}
-
-	/**
-	 * Display a listing of the resource.
-	 * GET /users
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /users/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /users
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /users/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /users/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /users/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /users/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		$this->user_register_form = $user_register_form;
 	}
 
 	/**
@@ -134,8 +57,59 @@ class UsersController extends \BaseController {
 		}
 	}
 
+	/**
+	 * Attempt to logout user
+	 * GET /user/logout
+	 *
+	 * @return Redirect to home page
+	 */
+	public function getLogout()
+	{
+		$this->user->logoutUser();
+		return Redirect::route('home');
+	}
+
+	public function getRegister()
+	{
+		return View::make('users.register');
+	}
+
+	public function postRegister()
+	{
+		$register_inform = Input::all();
+		$register_inform['user_role'] = 'normal customer';
+		$returnLink = "user/register";
+
+		$this->user_register_form->register($register_inform, $returnLink);
+		return View::make('users.register_result');
+	}
+
 	public function getDashboard()
 	{
 		return View::make('users.dashboard');
+	}
+
+	//registration form email validation. Ajax calling function
+	//check if the registering email already being used
+	public function postValidateEmail()
+	{
+		$input = array(
+			'email' => Input::get('email'),
+			);
+		$rule = array(
+			'email' => 'unique:users,email',
+			);
+
+		$validator = Validator::make($input, $rule);
+
+		if($validator->fails()){
+			$return_array = array(
+				'status'=>false, 
+				);
+			return Response::json($return_array);
+		}
+
+		$return_array = array('status'=>true);
+		return Response::json($return_array);
 	}
 }

@@ -3,7 +3,7 @@
 use Easywine\Service\Validation\ValidatorInterface;
 use Easywine\Repo\User\UserRepositoryInterface;
 
-class UserLoginForm {
+class UserRegisterForm {
 
 	/**
 	 *  validator
@@ -27,15 +27,15 @@ class UserLoginForm {
 	}
 
 	/**
-	 * Attempt to login user
+	 * Register New User
 	 *
-	 * @param Array User Login Inform
+	 * @param Array User Registration Inform
 	 * @param String Link where it would redirect to when form validation fails
-	 * @return Boolean
+	 * @return \Illuminate\Database\Eloquent\Model
 	 */
-	public function login(array $input, $returnLink)
+	public function register(array $input, $returnLink)
 	{
 		$this->validator->with($input, $returnLink)->validates();
-		return $this->user->loginUser($input);
+		return $this->user->registerUser($input);
 	}
 }

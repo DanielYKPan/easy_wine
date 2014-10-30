@@ -37,6 +37,18 @@
 						</div>
 					</section>
 					{{Form::close()}}
+					<section class="new-customers-box col-sm-6 col-md-6">
+						<header class="login-form-header">{{{"New to Easy-Wine?"}}}</header>
+						<div class="panel panel-default new-skin">
+							<div class="panel-body">
+								<p>Welcome</p><br>
+								<p>Create an account in just 60 seconds for faster shopping. There's no obligation to purchase.</p><br>
+								<p><strong>Let's get started.</strong></p>
+								</div>
+								{{HTML::linkAction('UsersController@getRegister', 'start', array(), array('class'=>'btn btn-primary pull-right text-uppercase btn-register', 'role'=>'button'))}}
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</section>
@@ -44,5 +56,8 @@
 @stop
 
 @section('script')
-
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+{{HTML::script('packages/angularjs/js/app.js')}}
+{{HTML::script('packages/angularjs/js/controllers.js')}}
+{{HTML::script('packages/angularjs/js/directives.js')}}
 @stop
