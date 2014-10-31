@@ -6,12 +6,15 @@ class EloquentWineRepository implements WineRepositoryInterface {
 
 	protected $wine;
 	protected $type;
+	protected $variety;
 
 	public function __construct(Model $wine,
-								Model $type)
+								Model $type,
+								Model $variety)
 	{
 		$this->wine = $wine;
 		$this->type = $type;
+		$this->variety = $variety;
 	}
 
 	/**
@@ -37,7 +40,7 @@ class EloquentWineRepository implements WineRepositoryInterface {
      */
 	public function byWineType($wine_type, array $pagi_rule)
 	{
-		$foundType = $this->type->where('type_name', '=', $wine_type)->first();
+		$foundType = $this->type->where('type_name', '=', $wine_type)->first()->toArray();
 
 		$result = new \StdClass;
 		$result->page = $pagi_rule['page'];
@@ -45,20 +48,18 @@ class EloquentWineRepository implements WineRepositoryInterface {
 		$result->totalItems = 0;
 		$result->items = array();
 
-		if( !$foundType )
-		{
-			return $result;
-		} else {
-			$wines = $foundType ->wines()
-								->orderBy($pagi_rule['sort_name'], $pagi_rule['sort_order'])
-								->skip($pagi_rule['per_page']*($pagi_rule['page']-1))
-								->take($pagi_rule['per_page'])
-								->get();
+		$test_something = $this->wine
+						->wineType($foundType);
+
+		$wines = $test_something
+						->orderBy($pagi_rule['sort_name'], $pagi_rule['sort_order'])
+						->skip($pagi_rule['per_page']*($pagi_rule['page']-1))
+						->take($pagi_rule['per_page'])
+						->get();
 
 			$result->totalItems = $this->totalByWineType($wine_type);
 	        $result->items = $wines->all();
 	        return $result;
-		}
 	}
 
 	/**
@@ -73,5 +74,10 @@ class EloquentWineRepository implements WineRepositoryInterface {
                     ->first()
                     ->wines()
                     ->count();
+    }
+
+    public function fetchVarieties()
+    {
+    	return $this->variety->all();
     }
 }

@@ -38,6 +38,14 @@ class Wine extends \Eloquent {
 		return $this->belongsToMany('Variety')->withTimestamps();
 	}
 
+    public function scopeWineType($query, array $wine_type)
+    {
+        return $query->whereHas('type', function($q) use ($wine_type){
+                                            $q->whereIn('type_name', $wine_type);
+                                        }
+                );
+    }
+
 	public function getAvailabilityMessageAttribute()
     {
     	switch ($this->getAttribute('availability')) {

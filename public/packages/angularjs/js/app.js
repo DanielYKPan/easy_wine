@@ -1,10 +1,19 @@
 //app.js
 	//create angular app
-	var easyWineApp = angular.module(
+	/*var easyWineApp = angular.module(
 		'easyWineApp', 
-		['easyWineControllers', 'easyWineDirectives'], 
+		[], 
 		function($interpolateProvider) {
-			$interpolateProvider.startSymbol('<%');
-	        $interpolateProvider.endSymbol('%>');
+			$interpolateProvider.startSymbol('[[');
+	        $interpolateProvider.endSymbol(']]');
 		}
+	);*/
+var easyWineApp = angular.module(
+		'easyWineApp', 
+		['easyWineControllers', 'easyWineDirectives']
 	);
+
+easyWineApp.config(function($interpolateProvider) {
+  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.endSymbol(']]');
+});

@@ -18,4 +18,6 @@ interface WineRepositoryInterface {
      * @return StdClass Object with $items and $totalItems for pagination
      */
 	public function byWineType($wine_type, array $pagi_rule);
+
+	public function fetchVarieties();
 }

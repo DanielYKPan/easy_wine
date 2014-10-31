@@ -4,6 +4,7 @@ use User;
 use UserDetail;
 use Wine;
 use Type;
+use Variety;
 use Easywine\Repo\User\EloquentUserRepository;
 use Easywine\Repo\Wine\EloquentWineRepository;
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +20,7 @@ class RepoServiceProvider extends ServiceProvider {
 		});
 
 		$app->bind('Easywine\Repo\Wine\WineRepositoryInterface', function($app){
-			return new EloquentWineRepository(new Wine, new Type);
+			return new EloquentWineRepository(new Wine, new Type, new Variety);
 		});
 	}
 }

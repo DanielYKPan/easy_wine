@@ -22,3 +22,17 @@ var easyWineControllers = angular.module('easyWineControllers', []);
 				
 		}
 	]);
+
+	easyWineControllers.controller('searchWineController', ['$scope', '$http',
+		function($scope, $http) {
+			$http({
+				'method': 'POST',
+				'url': window.location.origin+'/wines/fetch-variety',
+			}).
+			success(function(data){
+                 $scope.varieties = data;
+            });
+            $scope.checked_varieties = [];
+            $scope.checked_countries = [];
+		}
+	]);

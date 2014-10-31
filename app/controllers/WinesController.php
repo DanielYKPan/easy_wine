@@ -12,35 +12,13 @@ class WinesController extends \BaseController {
 	}
 
 	/**
-	 * Display a listing of the resource.
-	 * GET /wines
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /wines
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
 	 * Display the specified resource.
-	 * GET /wines/{product_code}
+	 * GET /wines/wine/{product_code}
 	 *
 	 * @param  string  $product_code
 	 * @return Response
 	 */
-	public function show($product_code)
+	public function getWine($product_code)
 	{
 		$wine = $this->wine->byProductCode($product_code);
 		return View::make('wines.show')->with('wine', $wine);
@@ -67,5 +45,21 @@ class WinesController extends \BaseController {
 		}
 
 		return View::make('wines.index')->with('wines', $wines);
+	}
+
+	public function postFetchVariety()
+	{
+		return $this->wine->fetchVarieties();
+	}
+
+	public function postTestVariety()
+	{
+		$input = Input::get('varieties');
+		return $input;
+	}
+
+	public function getFetchVariety()
+	{
+		return View::make('wines.test');
 	}
 }

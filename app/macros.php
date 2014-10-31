@@ -11,7 +11,7 @@
 
 
 
-HTML::macro('route_image', function($name,
+HTML::macro('action_image', function($actionName,
 									$parameters=array(),
 									$link_attributes=array(),
 									$img,
@@ -20,7 +20,7 @@ HTML::macro('route_image', function($name,
 									$absolute = true,
 									$secure = null)
 {
-	$url = URL::route($name, $parameters, $absolute);
+	$url = URL::action($actionName, $parameters, $absolute);
 	$url = URL::to($url, array(), $secure);
 	$attr = HTML::attributes($link_attributes);
 	$image = HTML::image($img, $atr, $img_attributes, $secure);

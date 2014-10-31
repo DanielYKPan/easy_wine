@@ -2,29 +2,37 @@
 
 @section('container-content')
 	<div id="wrapper" class="wine">
-		<section id="mainBody">
+		<section id="mainBody" data-ng-controller="searchWineController">
 			<div class="wines-content row">
 				<div class="col-sm-4 col-md-4 search-container" id="rules-search-container">
-					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
+					<div class="panel panel-default search-price-range-container">
+						<div class="panel-heading">
+							<h5 class="panel-title">Price</h5>
+						</div>
+						<div class="panel-body">
+							<h6><strong>{{{"Select a price range"}}}</strong></h6>
+							{{"$".Form::input('text','min-price', null , array('placeholder'=>'Min', 'class'=>'price-range-input', "onkeydown"=>"return isNumber(event);"))}}
+							{{{"to"}}}
+							{{"$".Form::input('text','max-price', null , array('placeholder'=>'Max', 'class'=>'price-range-input', "onkeydown"=>"return isNumber(event);"))}}
+						</div>
+					</div>
+					<div class="panel panel-default search-variety-container">
+						<div class="panel-heading">
+							<h5 class="panel-title">Wine Varieties</h5>
+						</div>
+						<ul class="list-group pannel-body">
+						  <li class="list-group-item" data-ng-repeat="variety in varieties">
+						  	<input type="checkbox" name="variety" class="search-variety-ckb" value="[[variety.variety_name]]" check-list="checked_varieties">[[variety.variety_name]]<span class="badge">14</span>
+						  </li>
+						  <li class="list-group-item">
+						  	<a data-toggle="collapse" href="#collapseOne">
+					          Collapsible Group Item #1
+					        </a>
+						  </li>
+						</ul>
 					</div>
 					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
-					</div>
-					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
-					</div>
-					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
-					</div>
-					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
-					</div>
-					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
-					</div>
-					<div class="col-xs-4 col-sm-8 col-md-8">
-						rule1
+						<div>The following fruits are checked: [[checked_varieties | json]]</div>
 					</div>
 				</div>
 				<div class="clearfix visible-xs-block"></div>
@@ -69,6 +77,10 @@
 @stop
 
 @section('script')
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+{{HTML::script('packages/angularjs/js/app.js')}}
+{{HTML::script('packages/angularjs/js/controllers.js')}}
+{{HTML::script('packages/angularjs/js/directives.js')}}
 <script type="text/javascript">
 $(document).ready(function()
 {	
@@ -170,5 +182,19 @@ $(document).ready(function()
 		return false;
 	});
 });
+
+//make text input only accept number value
+function isNumber(event) {
+  if (event) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode != 190 && charCode > 31 && 
+       (charCode < 48 || charCode > 57) && 
+       (charCode < 96 || charCode > 105) && 
+       (charCode < 37 || charCode > 40) && 
+        charCode != 110 && charCode != 8 && charCode != 46 )
+       return false;
+  }
+  return true;
+}
 </script>
 @stop

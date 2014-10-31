@@ -1,11 +1,11 @@
 @foreach($wines as $wine)
 <div class="row wine-info-list">
 	<div class="col-xs-2 col-sm-2 col-md-2 wine-info-list-pic">
-	  	{{HTML::route_image('wines.show', array($wine->product_code), array('class'=>'resultTemplate_link'), 'uploads/images/wines/260/'.$wine->image_path, $wine->product_code, array('class'=>'resultTemplate_img img-responsive'))}}
+	  	{{HTML::action_image('WinesController@getWine', array($wine->product_code), array('class'=>'resultTemplate_link'), 'uploads/images/wines/260/'.$wine->image_path, $wine->product_code, array('class'=>'resultTemplate_img img-responsive'))}}
 	</div>
 	<div class="col-xs-6 col-sm-6 col-md-6 wine-info-list-description">
 		<div class="resultTemplate_label">
-		{{HTML::linkRoute('wines.show',$wine->wine_name, array($wine->product_code), array('class'=>'resultTemplate_label'))}}
+		{{HTML::linkAction('WinesController@getWine',$wine->wine_name, array($wine->product_code), array('class'=>'resultTemplate_label'))}}
 		</div>
 		{{HTML::ul($wine->wineDetail->USP,array('class'=>'resultTemplate_usp'))}}
 	</div>

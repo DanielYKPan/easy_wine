@@ -9,7 +9,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-	protected $fillable = ['email', 'password','remember_token', 'user_role'];
+	protected $fillable = ['email', 'remember_token', 'user_role'];
+
+	protected $guarded = ['id', 'password'];
 
 	/*protected $appends = ['full_name'];*/
 
@@ -38,12 +40,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->hasOne('UserDetail');
 	}
-
-	/*public function getFullNameAttribute()
-    {
-    	$userFullName = $this->userDetail()->select(['title', 'first_name', 'last_name'])->firstOrFail()->toArray();
-        return $userFullName['title'].' '.ucfirst($userFullName['first_name']).' '.ucfirst($userFullName['last_name']);
-    }*/
 
     public function setPasswordAttribute($password)
     {
